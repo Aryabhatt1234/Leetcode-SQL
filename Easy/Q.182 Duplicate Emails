@@ -1,0 +1,7 @@
+Problem Link: https://leetcode.com/problems/duplicate-emails/
+
+Solution:
+
+select Email from Person 
+group by email 
+having count(email)>=2
