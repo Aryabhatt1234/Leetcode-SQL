@@ -1,0 +1,6 @@
+Problem Link: https://leetcode.com/problems/invalid-tweets/
+
+Solution:
+
+select tweet_id from Tweets
+where length(content)>15
