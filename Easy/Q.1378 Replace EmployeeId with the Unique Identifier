@@ -1,0 +1,6 @@
+Problem Link: https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/
+
+Solution:
+
+select u.unique_id, e.name from Employees e left join EmployeeUNI u
+on e.id = u.id
