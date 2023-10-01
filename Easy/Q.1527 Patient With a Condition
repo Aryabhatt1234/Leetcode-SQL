@@ -1,0 +1,6 @@
+Problem Link: https://leetcode.com/problems/patients-with-a-condition/description/
+
+Solution:
+
+select * from Patients
+where conditions like("% DIAB1%") or conditions like("%DIAB1%") and conditions not like("%_DIAB1%")
