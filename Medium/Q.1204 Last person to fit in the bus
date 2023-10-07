@@ -1,0 +1,10 @@
+Problem Link: https://leetcode.com/problems/last-person-to-fit-in-the-bus/description/
+
+Solution:
+
+select q2.person_name from Queue q1 join Queue q2
+on q1.turn <= q2.turn
+group by q2.turn 
+having(sum(q1.weight)<=1000)
+order by q2.turn desc
+limit 1
