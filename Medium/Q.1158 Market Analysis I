@@ -1,0 +1,8 @@
+Problem Link: https://leetcode.com/problems/market-analysis-i/
+
+Solution:
+
+select user_id as buyer_id, join_date, sum(if(year(order_date)=2019,1,0)) as orders_in_2019 
+from Users left join Orders o
+on user_id = o.buyer_id
+group by user_id
