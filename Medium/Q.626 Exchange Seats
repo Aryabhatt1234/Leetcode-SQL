@@ -1,0 +1,9 @@
+Problem Link: https://leetcode.com/problems/exchange-seats/
+
+Solution:
+
+with cte as (
+    select *, lag(student) over() as prev, lead(student) over() as nxt from Seat
+)
+select id, coalesce(if(id%2 = 1, nxt, prev),student) as student from cte
+order by id
