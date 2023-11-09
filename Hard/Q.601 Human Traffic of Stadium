@@ -1,0 +1,13 @@
+Problem Link: https://leetcode.com/problems/human-traffic-of-stadium/
+
+Solution:
+
+with cte as (
+    select *, lag(people,1) over() as lag1,
+              lag(people,2) over() as lag2,
+              lead(people,1) over() as lead1,
+              lead(people,2) over() as lead2
+              from Stadium
+)
+select id, visit_date, people from cte
+where (people>99 and lag1>99 and lag2>99) or (people>99 and lag1>99 and lead1>99) or (people>99 and lead1>99 and lead2>99)
